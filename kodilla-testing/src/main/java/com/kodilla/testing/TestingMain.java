@@ -16,14 +16,19 @@ public class TestingMain {
 
         Calculator calc = new Calculator();
 
-        Integer sum = calc.add(3, 5);
-        Integer difference = calc.subtract(5,7);
+        int sum = calc.addAToB(3, 5);
+        int difference = calc.subtractAFromB(5,7);
 
-        if(sum == 8 && difference == -2) {
-                    System.out.println("Test OK" + " Sum = " + sum + " and difference = " + difference);
+        if(sum == 8) {
+                    System.out.println("Test addAToB OK!");
         }else{
             System.out.println("Error!");
         }
 
+        if(difference == -2) {
+            System.out.println("Test subtractAFromB OK!");
+        }else{
+            System.out.println("Error!");
+        }
     }
 }

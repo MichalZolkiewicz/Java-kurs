@@ -19,7 +19,7 @@ public class TestingMain {
         Integer sum = calc.add(3, 5);
         Integer difference = calc.subtract(5,7);
 
-        if(sum != null && difference != null) {
+        if(sum == 8 && difference == -2) {
                     System.out.println("Test OK" + " Sum = " + sum + " and difference = " + difference);
         }else{
             System.out.println("Error!");

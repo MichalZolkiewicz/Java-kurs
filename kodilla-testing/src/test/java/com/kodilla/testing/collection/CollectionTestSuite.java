@@ -2,13 +2,8 @@ package com.kodilla.testing.collection;
 
 import com.kodilla.testing.collection.OddNumbersExterminator;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.*;
 import java.util.*;
-
 
 @DisplayName("Collection List Suite")
 public class CollectionTestSuite {
@@ -27,11 +22,14 @@ public class CollectionTestSuite {
     )
     @Test
     public void testOddNumbersExterminatorEmptyList(){
-        List<Integer> listWithoutNumbers = new ArrayList<>();
         OddNumbersExterminator emptyList = new OddNumbersExterminator();
+        List<Integer> listWithoutNumbers = new ArrayList<>();
+        List<Integer> listWithoutNumbers2 = new ArrayList<>();
 
-        emptyList.exterminate(listWithoutNumbers);
-        System.out.println(emptyList.exterminate(listWithoutNumbers));
+
+        List<Integer> isThisReallyEmptyList = emptyList.exterminate(listWithoutNumbers);
+        Assertions.assertEquals(listWithoutNumbers2, isThisReallyEmptyList);
+
     }
     @DisplayName(
             "When List is filled with numbers, checks if method OddNumbersExterminator is adding only even numbers"
@@ -46,7 +44,9 @@ public class CollectionTestSuite {
             listWithNumbers.add(randomValue);
         }
         OddNumbersExterminator normalList = new OddNumbersExterminator();
-        normalList.exterminate(listWithNumbers);
-        System.out.println(normalList.exterminate(listWithNumbers));
+        List<Integer> listWithOddNumbers = normalList.exterminate(listWithNumbers);
+        Assertions.assertNotEquals(listWithNumbers, listWithOddNumbers);
+        System.out.println(listWithOddNumbers);
+
     }
 }

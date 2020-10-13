@@ -36,17 +36,11 @@ public class CollectionTestSuite {
     )
     @Test
     public void testOddNumbersExterminatorNormalList(){
-        List<Integer> listWithNumbers = new ArrayList<>();
-        Random generator = new Random();
+        List<Integer> listWithNumbers = new ArrayList<>(Arrays.asList(1,3,4,6,7,10,13,14,17,19,20,21,22,23,30,31));
+        List<Integer> someListWithOddNumbers = new ArrayList<>(Arrays.asList(4,6,10,14,20,22,30));
 
-        for(int i=0; i<50; i++) {
-            int randomValue = generator.nextInt(100);
-            listWithNumbers.add(randomValue);
-        }
-        OddNumbersExterminator normalList = new OddNumbersExterminator();
-        List<Integer> listWithOddNumbers = normalList.exterminate(listWithNumbers);
-        Assertions.assertNotEquals(listWithNumbers, listWithOddNumbers);
-        System.out.println(listWithOddNumbers);
+        List<Integer> theList = OddNumbersExterminator.exterminate(listWithNumbers);
 
+        Assertions.assertEquals(someListWithOddNumbers, theList);
     }
 }

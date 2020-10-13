@@ -9,6 +9,7 @@ class ShapeCollector {
     private ArrayList<Shape> shapes = new ArrayList<Shape>();
 
     public ShapeCollector(ArrayList<Shape> shapes) {
+
         this.shapes = shapes;
     }
 
@@ -38,9 +39,5 @@ class ShapeCollector {
     @Override
     public String toString() {
         return "The list of ShapeCollector: " + shapes;
-    }
-
-    public ArrayList<Shape> getShapes() {
-        return shapes;
     }
 }

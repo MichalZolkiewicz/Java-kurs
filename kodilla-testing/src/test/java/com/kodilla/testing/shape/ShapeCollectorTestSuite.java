@@ -1,7 +1,7 @@
 package com.kodilla.testing.shape;
 
 import org.junit.jupiter.api.*;
-
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -37,8 +37,8 @@ public class ShapeCollectorTestSuite {
             Triangle triangle = new Triangle(10, 15);
             Square square = new Square(10);
 
-            ShapeCollector theList = new ShapeCollector(new ArrayList<Shape>(Arrays.asList(square, triangle)));
-            ShapeCollector expectedList = new ShapeCollector(new ArrayList<Shape>(Arrays.asList(square, triangle, circle)));
+            ShapeCollector theList = new ShapeCollector(new ArrayList<>(Arrays.asList(square, triangle)));
+            ShapeCollector expectedList = new ShapeCollector(new ArrayList<>(Arrays.asList(square, triangle, circle)));
 
             int expectedListSize = expectedList.showFigures().size();
 

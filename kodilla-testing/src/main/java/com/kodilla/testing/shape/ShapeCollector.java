@@ -6,9 +6,9 @@ import java.util.List;
 
 class ShapeCollector {
 
-    private ArrayList<Shape> shapes = new ArrayList<Shape>();
+    private List<Shape> shapes;
 
-    public ShapeCollector(ArrayList<Shape> shapes) {
+    public ShapeCollector(List<Shape> shapes) {
 
         this.shapes = shapes;
     }
@@ -29,7 +29,7 @@ class ShapeCollector {
         }
     }
 
-    public ArrayList<Shape> showFigures() {
+    public List<Shape> showFigures() {
         for(Shape figures: shapes) {
             System.out.println(figures);
         }
@@ -40,4 +40,5 @@ class ShapeCollector {
     public String toString() {
         return "The list of ShapeCollector: " + shapes;
     }
+
 }

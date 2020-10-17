@@ -64,7 +64,7 @@ class WeatherForecastTestSuite {
         //Given
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
         //When
-        double medianTemp = weatherForecast.calculateMedianTemperature().get(2);
+        Double medianTemp = weatherForecast.calculateMedianTemperature();
         //Then
         Assertions.assertEquals(25.5, medianTemp);
     }

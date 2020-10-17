@@ -2,8 +2,6 @@ package com.kodilla.testing.weather.stub;
 
 import java.util.*;
 
-import static java.util.Collections.*;
-
 public class WeatherForecast {
     private Temperatures temperatures;
 
@@ -35,7 +33,7 @@ public class WeatherForecast {
         return temperaturesSum/roundCounter;
     }
 
-    public List<Double> calculateMedianTemperature() {
+    public Double calculateMedianTemperature() {
 
         List<Double> sorted = new ArrayList<>();
         for(Map.Entry<String, Double> unsorted: temperatures.getTemperatures().entrySet()) {
@@ -44,6 +42,6 @@ public class WeatherForecast {
 
         }
         Collections.sort(sorted);
-        return sorted;
+        return sorted.get(2);
     }
 }

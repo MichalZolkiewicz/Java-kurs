@@ -2,15 +2,14 @@ package com.kodilla.testing.weather.mock;
 
 import com.kodilla.testing.weather.stub.Temperatures;
 import com.kodilla.testing.weather.stub.WeatherForecast;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
 import static org.mockito.Mockito.when;
@@ -20,10 +19,13 @@ import static org.mockito.Mockito.when;
 class WeatherForecastTestSuite {
 
     private static int testCounter = 0;
+
     @Mock
     private Temperatures temperaturesMock;
     @BeforeEach
-    public void beforeAll() {
+    public void beforeEach() {
+        testCounter++;
+        System.out.println("Commencing test #" + testCounter);
         Map<String, Double> temperaturesMap = new HashMap<>();
         temperaturesMap.put("Rzeszow", 25.5);
         temperaturesMap.put("Krakow", 26.2);
@@ -34,6 +36,10 @@ class WeatherForecastTestSuite {
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
     }
 
+    @AfterEach
+    public void afterEach() {
+        System.out.println("Test completed");
+    }
 
     @Test
     void testCalculateForecastWithMock() {

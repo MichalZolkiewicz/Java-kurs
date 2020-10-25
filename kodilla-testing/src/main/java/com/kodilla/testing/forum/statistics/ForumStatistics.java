@@ -57,8 +57,9 @@ public class ForumStatistics {
         System.out.println("\nForum contains #" + postsCount + " posts.");
         System.out.println("All posts have #" + commentsCount + " comments.");
         System.out.println("Average of posts per user is " + avgPostPerUser);
-        System.out.println("Average of comments per user is " + avgCommentsPerUser);
         System.out.println("Average of comments per post is " + avgCommentsPerPost);
+        System.out.println("Average of comments per user is " + avgCommentsPerUser);
+
 
     }
 }

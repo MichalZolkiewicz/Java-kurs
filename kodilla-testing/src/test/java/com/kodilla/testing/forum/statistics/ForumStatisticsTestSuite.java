@@ -145,8 +145,9 @@ public class ForumStatisticsTestSuite {
         }
 
         when(statisticsMock.usersNames()).thenReturn(listOfUsers);
-        when(statisticsMock.commentsCount()).thenReturn(1000);
         when(statisticsMock.postsCount()).thenReturn(100);
+        when(statisticsMock.commentsCount()).thenReturn(1000);
+
 
         forumStatistics.calculateAdvStatistics(statisticsMock);
         forumStatistics.showStatistics();

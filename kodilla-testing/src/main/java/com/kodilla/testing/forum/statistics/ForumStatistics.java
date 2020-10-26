@@ -1,7 +1,5 @@
 package com.kodilla.testing.forum.statistics;
 
-import java.sql.SQLOutput;
-
 public class ForumStatistics {
 
     private int userCount;
@@ -43,11 +41,11 @@ public class ForumStatistics {
         commentsCount = statistics.commentsCount();
 
         if(userCount > 0) {
-            avgPostPerUser = (double) postsCount/ (double) userCount;
-            avgCommentsPerUser = (double) commentsCount/ (double) userCount;
+            avgPostPerUser = (double) postsCount/ userCount;
+            avgCommentsPerUser = (double) commentsCount/ userCount;
         }
         if(postsCount > 0) {
-            avgCommentsPerPost = (double) commentsCount / (double) postsCount;
+            avgCommentsPerPost = (double) commentsCount / postsCount;
         }
     }
 

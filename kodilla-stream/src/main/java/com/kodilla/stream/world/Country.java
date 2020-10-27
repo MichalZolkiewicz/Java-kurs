@@ -15,4 +15,8 @@ public final class Country {
     public final BigDecimal getPeopleQuantity() {
         return peopleQuantity;
     }
+
+    public final String getCountryName() {
+        return countryName;
+    }
 }

@@ -86,7 +86,7 @@ public class BoardTestSuite {
                 .filter(listOfTasksInProgress::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(Task::getCreated)
-                .mapToDouble(d -> ChronoUnit.DAYS.between(d, LocalDate.now()))
+                .mapToDouble(createdDate -> ChronoUnit.DAYS.between(createdDate, LocalDate.now()))
                 .average()
                 .getAsDouble();
 

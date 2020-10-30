@@ -19,7 +19,7 @@ public class FirstChallenge {
         FirstChallenge firstChallenge = new FirstChallenge();
 
         try {
-            double result2 = firstChallenge.divide(3, 0);
+            firstChallenge.divide(3, 0);
         }catch (ArithmeticException exception) {
             System.out.println("Unfortunately I can't divide by 0. Error: " + exception);
         }finally{

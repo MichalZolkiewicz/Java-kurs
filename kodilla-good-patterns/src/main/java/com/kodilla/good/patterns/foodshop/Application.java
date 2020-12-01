@@ -9,7 +9,6 @@ public class Application {
 
         DeliveryRequest deliveryRequest = new DeliveryRequest(healthyShop, banana);
         DeliveryProcess deliveryProcess = new DeliveryProcess();
-
         deliveryProcess.deliver(deliveryRequest);
     }
 }

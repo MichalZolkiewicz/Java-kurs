@@ -8,7 +8,7 @@ public class DeliveryProcess {
             System.out.println("Delivery from: " + deliveryRequest.getSupplier() + ", for: "
                                 + deliveryRequest.getProduct().getProductQuantity()
                                 + " " + deliveryRequest.getProduct().getProductName());
-        }else{
+        }else {
             System.out.println("Delivery failed!");
         }
     }

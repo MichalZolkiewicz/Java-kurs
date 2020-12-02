@@ -5,7 +5,7 @@ public class Application {
     public static void main(String[] args) {
 
         User user = new User("Michał Żółkiewicz","Głowackiego 5/19", "zolkiewicz.michal@gmail.com");
-        Product product = new Product("PS 5", 2500.00);
+        Product product = new Product("PS 5");
 
         InformationService informationService = new EmailNotificator();
         OrderService orderService = new OrderService();

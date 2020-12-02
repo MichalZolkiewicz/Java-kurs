@@ -4,10 +4,12 @@ public class DeliveryRequest {
 
     private Supplier supplier;
     private Product product;
+    private int productQuantity;
 
-    public DeliveryRequest(Supplier supplier, Product product) {
+    public DeliveryRequest(Supplier supplier, Product product, int productQuantity) {
         this.supplier = supplier;
         this.product = product;
+        this.productQuantity = productQuantity;
     }
 
     public Supplier getSupplier() {
@@ -16,5 +18,9 @@ public class DeliveryRequest {
 
     public Product getProduct() {
         return product;
+    }
+
+    public int getProductQuantity() {
+        return productQuantity;
     }
 }

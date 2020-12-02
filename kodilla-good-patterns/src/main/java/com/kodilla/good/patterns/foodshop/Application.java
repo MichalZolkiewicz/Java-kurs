@@ -5,9 +5,9 @@ public class Application {
     public static void main(String[] args) {
 
         Supplier healthyShop = new HealthyShop();
-        Product banana = new Product("Banana", 3);
+        Product banana = new Product("Banana");
 
-        DeliveryRequest deliveryRequest = new DeliveryRequest(healthyShop, banana);
+        DeliveryRequest deliveryRequest = new DeliveryRequest(healthyShop, banana, 3);
         DeliveryProcess deliveryProcess = new DeliveryProcess();
         deliveryProcess.deliver(deliveryRequest);
     }

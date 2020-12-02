@@ -3,20 +3,13 @@ package com.kodilla.good.patterns.foodshop;
 public class Product {
 
     private String productName;
-    private int productQuantity;
 
-    public Product(String productName, int productQuantity) {
+    public Product(String productName) {
         this.productName = productName;
-        this.productQuantity = productQuantity;
 
     }
 
     public String getProductName() {
         return productName;
     }
-
-    public int getProductQuantity() {
-        return  productQuantity;
-    }
-
 }

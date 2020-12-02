@@ -7,9 +7,4 @@ public class ExtraFoodShop implements Supplier {
         System.out.println("Process 1");
         return false;
     }
-
-    @Override
-    public String toString() {
-        return "ExtraFoodShop";
-    }
 }

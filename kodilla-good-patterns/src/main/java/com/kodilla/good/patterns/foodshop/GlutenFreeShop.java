@@ -7,9 +7,4 @@ public class GlutenFreeShop implements Supplier {
         System.out.println("Process 2");
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "GlutenFreeShop";
-    }
 }

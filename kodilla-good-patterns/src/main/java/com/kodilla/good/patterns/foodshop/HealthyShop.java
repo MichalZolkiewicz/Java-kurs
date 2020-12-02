@@ -7,9 +7,4 @@ public class HealthyShop implements Supplier {
         System.out.println("Process 3");
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "HealthyShop";
-    }
 }

@@ -22,6 +22,8 @@ public class CalculatorTestSuite {
         double mul = calculator.mul(3,2);
         double div = calculator.div(6,2);
 
+
+
         //Then
         assertEquals(4, add);
         assertEquals(2, sub);

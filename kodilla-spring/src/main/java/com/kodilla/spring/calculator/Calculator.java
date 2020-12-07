@@ -14,22 +14,26 @@ public class Calculator {
     }
 
     public double add(double a, double b) {
-        display.displayValue(a+b);
-        return a+b;
+        double sum = a+b;
+        display.displayValue(sum);
+        return sum;
     }
 
     public double sub(double a, double b) {
-        display.displayValue(a-b);
-        return a-b;
+        double difference = a-b;
+        display.displayValue(difference);
+        return difference;
     }
 
     public double mul(double a, double b) {
-        display.displayValue(a*b);
-        return a*b;
+        double product = a*b;
+        display.displayValue(product);
+        return product;
     }
 
     public double div(double a, double b) {
-        display.displayValue(a/b);
-        return a/b;
+        double quotient = a/b;
+        display.displayValue(quotient);
+        return quotient;
     }
 }

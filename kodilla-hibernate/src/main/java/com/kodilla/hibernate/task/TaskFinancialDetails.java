@@ -1,7 +1,7 @@
 package com.kodilla.hibernate.task;
 
 
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

@@ -40,10 +40,11 @@ public class InvoiceDaoTestSuite {
         int invoiceId = invoice.getId();
         int invoiceItemsQuanitty = invoice.getItems().size();
 
-
         //Then
         assertNotEquals(0, invoiceId);
         assertEquals(2, invoiceItemsQuanitty);
+        assertEquals(item1, invoice.getItems().get(0));
+        assertEquals(product2.getName(), item2.getProduct().getName());
 
         //CleanUp
         invoiceDao.deleteById(invoiceId);

@@ -8,7 +8,8 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveThreeFirstCharactersFromCompanyName",
-        query = "SELECT SUBSTRING(name, 1, 3) FROM Company WHERE name = :NAME"
+        query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1,3) = :NAME",
+        resultClass = Company.class
 )
 @Entity
 @Table(name = "COMPANIES")

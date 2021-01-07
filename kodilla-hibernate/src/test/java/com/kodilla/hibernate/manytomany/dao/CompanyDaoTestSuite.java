@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -13,6 +15,9 @@ class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     void testSaveManyToMany() {
@@ -58,5 +63,52 @@ class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
+    }
+
+    @Test
+    void testRetrieveByLastName() {
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+        Employee elizabethSmith = new Employee("Elizabeth", "Smith");
+
+        employeeDao.save(johnSmith);
+        employeeDao.save(stephanieClarckson);
+        employeeDao.save(lindaKovalsky);
+        employeeDao.save(elizabethSmith);
+
+        String lastName = "Smith";
+
+        //When
+        List<Employee> readLastName = employeeDao.retrieveEmployeeWithCertainLastName(lastName);
+
+        //Then
+        assertEquals(2, readLastName.size());
+
+        //CleanUp
+        employeeDao.deleteAll();
+    }
+
+    @Test
+    void testCompanyThreeFirstNameCharacters() {
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        companyDao.save(softwareMachine);
+        companyDao.save(dataMaesters);
+        companyDao.save(greyMatter);
+
+        String threeFirstCharacters = "Sof";
+        //When
+        List<Company> readThreeFirstCharacters = companyDao.retrieveThreeFirstCharactersFromCompanyName(threeFirstCharacters);
+
+        //Then
+        assertEquals(1, readThreeFirstCharacters.size());
+
+        //CleanUp
+        companyDao.deleteAll();
     }
 }

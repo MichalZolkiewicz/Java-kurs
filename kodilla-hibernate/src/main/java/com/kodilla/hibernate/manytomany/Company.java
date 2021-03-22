@@ -11,6 +11,11 @@ import java.util.List;
         query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1,3) = :NAME",
         resultClass = Company.class
 )
+
+@NamedQuery(
+        name = "Company.retrieveCompanyNameByAnyNameFragment",
+        query = "FROM Company WHERE name LIKE '%' || :NAMEFRAGMENT ||'%' "
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

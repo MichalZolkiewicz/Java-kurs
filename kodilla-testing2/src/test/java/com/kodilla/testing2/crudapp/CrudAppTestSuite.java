@@ -101,7 +101,7 @@ public class CrudAppTestSuite {
         return result;
     }
 
-    private void cleanUpInCrudApp(String taskName) throws InterruptedException {
+    private void cleanUpInCrudApp(String taskName) {
         driver.navigate().refresh();
 
         while(!driver.findElement(By.xpath("//select[1]")).isDisplayed());
